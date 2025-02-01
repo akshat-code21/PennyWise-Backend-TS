@@ -11,6 +11,11 @@ import insightsRouter from "./routes/insights"
 const app = express();
 app.use(cors());
 app.use(express.json());
+app.get('/',(req,res)=>{
+  res.json({
+    message : "PennyWise Backend"
+  })
+});
 app.use("/api/v1/auth", authRouter);
 app.use("/api/v1/expenses", expenseRouter);
 app.use("/api/v1/insights", insightsRouter);
